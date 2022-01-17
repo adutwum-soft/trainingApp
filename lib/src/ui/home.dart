@@ -3,7 +3,9 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:training_app/src/res/colors.dart';
 import 'package:training_app/src/ui/widget/doing_great.dart';
+import 'package:training_app/src/ui/widget/home_title.dart';
 import 'package:training_app/src/ui/widget/next_workout.dart';
+import 'package:training_app/src/ui/widget/your_program.dart';
 
 class Home extends StatefulWidget {
   Home({Key? key}) : super(key: key);
@@ -36,9 +38,9 @@ class _HomeState extends State<Home> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
-            _buildTitle(),
+            const HomeTitle(),
             const SizedBox(height: 30),
-            _buildYourProgram(),
+            const YourProgram(),
             const SizedBox(height: 20),
             const NextWorkout(),
             const SizedBox(height: 5),
@@ -122,77 +124,6 @@ class _HomeState extends State<Home> {
           ),
         ),
       ),
-    );
-  }
-
-  Widget _buildYourProgram() {
-    return Row(
-      children: <Widget>[
-        Text(
-          'Your Program',
-          style: TextStyle(
-            fontSize: 20,
-            fontWeight: FontWeight.w700,
-            color: AppColors.homePageSubtitle,
-          ),
-        ),
-        Expanded(
-          child: Container(),
-        ),
-        Text(
-          'Details',
-          style: TextStyle(
-            fontSize: 20,
-            fontWeight: FontWeight.w700,
-            color: AppColors.homePageDetail,
-          ),
-        ),
-        const SizedBox(
-          width: 8,
-        ),
-        Icon(
-          Icons.arrow_forward_outlined,
-          size: 20,
-          color: AppColors.homePageIcons,
-        ),
-      ],
-    );
-  }
-
-  Widget _buildTitle() {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      children: <Widget>[
-        Text(
-          'Training',
-          style: TextStyle(
-            fontSize: 30,
-            color: AppColors.homePageTitle,
-            fontWeight: FontWeight.w700,
-          ),
-        ),
-        Row(
-          children: <Widget>[
-            Icon(
-              Icons.arrow_back_ios,
-              size: 20,
-              color: AppColors.homePageIcons,
-            ),
-            const SizedBox(width: 10),
-            Icon(
-              Icons.calendar_today_outlined,
-              size: 20,
-              color: AppColors.homePageIcons,
-            ),
-            const SizedBox(width: 15),
-            Icon(
-              Icons.arrow_forward_ios,
-              size: 20,
-              color: AppColors.homePageIcons,
-            ),
-          ],
-        ),
-      ],
     );
   }
 }
