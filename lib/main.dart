@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:training_app/src/ui/home.dart';
+import 'package:training_app/src/ui/video_info.dart';
 
 void main() {
   runApp(const MyApp());

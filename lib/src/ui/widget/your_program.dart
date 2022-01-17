@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:training_app/src/res/colors.dart';
 
+import '../video_info.dart';
+
 class YourProgram extends StatelessWidget {
   const YourProgram({Key? key}) : super(key: key);
 
@@ -30,10 +32,19 @@ class YourProgram extends StatelessWidget {
         const SizedBox(
           width: 8,
         ),
-        Icon(
-          Icons.arrow_forward_outlined,
-          size: 20,
-          color: AppColors.homePageIcons,
+        InkWell(
+          onTap: () => Navigator.of(context).push(
+            MaterialPageRoute(
+              builder: (context) {
+                return const VideoInfo();
+              },
+            ),
+          ),
+          child: Icon(
+            Icons.arrow_forward_outlined,
+            size: 20,
+            color: AppColors.homePageIcons,
+          ),
         ),
       ],
     );
